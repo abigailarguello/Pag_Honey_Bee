@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+header {
+    background-color: #e9b7e5;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header img {
+    width: 150px;
+    height: 150px;
+}
+
+nav {
+    background-color: #e6e3ee;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #3125d8;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #0c0c0c;
+}
+
+main {
+    margin-top: 20px;
+}
+
+main h2 {
+    color: #3227ca;
+}
+
+.property {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.property img {
+    max-width: 100%;
+    height: auto;
+}
+
+#redes-sociales img {
+    max-width: 50px;
+    height: auto;
+}
+
+footer {
+    background-color: #18a0d6;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* Estilos para el contenedor de chatbot simulado */
+#chat-container {
+    display: none;
+    border: 1px solid #e4ecb5;
+    padding: 10px;
+    max-width: 300px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #9ee4de;
+}

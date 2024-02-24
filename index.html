@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honey-Bee - Bienes Raíces</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Este es el encabezado -->
+    <header>
+        <h1>Honey-Bee - Bienes Raíces</h1>
+        <img src="honey_bee_logo.png" alt="Logo de Honey-Bee - Bienes Raíces">
+
+        <!-- Estes es el menú de navegación -->
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#propiedades">Propiedades</a></li>
+                <li><a href="#ayuda">Ayuda</a></li>
+                <li><a href="#redes-sociales">Redes Sociales</a></li>
+            </ul>
+        </nav>
+    </header>    
+
+    <!-- Contenido de tu página -->
+    <main>
+        <section id="inicio">
+            <h2>Bienvenidos a Honey Bee, una página de bienes raíces y más.</h2>
+            <p>Te ayudamos a encontrar tu nuevo hogar y a vender tu antiguo hogar.</p>
+            <p>Somos una pagina de bienes raíces que te ayudara y accesorara de la 
+                mejor manera.</p>
+            <p>Vendemos tu casa , lote o te ayudamos a conseguir tu hogar soñado.</p>
+            <p>Somos su mejor acesoria.</p>
+            <p>Es un gusto tenerte con nosotros.</p>
+            <br>
+        </section>
+
+        <section id="propiedades">
+            <h2>Catálogo Tu Hogar - Bienes Raíces</h2>
+            <p>¡Tu hogar en nuestras manos!</p>
+            <br>
+
+            <div class="property">
+                <h2>Propiedad 1</h2>
+                <img src="casa_moderna.jpeg" alt="Casa Moderna">
+                <p>Descripción de la propiedad 1. La propiedad es una casa moderna.</p>
+                <p>Con finos acabados y una accelente ubicacion.</p>             
+                <p>Precio: $250,000.</p>
+                <p>Ubicación: Ciudad Ejemplo.</p>
+                <p>Características: 3 dormitorios, 2 baños</p>
+                <br>
+            </div>
+        
+            <div class="property">
+                <h2>Propiedad 2</h2>
+                <img src="casa_cafe.jpeg" alt="Casa Café">
+                <p>Descripción de la propiedad 2. Esta propiedad tiene diseños en piedra 
+                    con una hermosa fachada en un barrio tranquilo y seguro.</p>
+                <p>Precio: $300,000</p>
+                <p>Ubicación: Otra Ciudad</p>
+                <p>Características: 4 dormitorios, 3 baños</p>
+                <br>
+            </div>
+        </section>
+
+        <section id="ayuda">
+            <h2>Ayuda</h2>
+            <br>
+            <!-- Botón de Ayuda -->
+            <button onclick="mostrarChatbot()">Ayuda del ChatBot</button>
+
+            <!-- Contenedor de Chatbot simulado -->
+            <div id="chat-container">
+                <p>Chatbot: ¡Hola! ¿En qué puedo ayudarte hoy?</p>
+                <br>
+                <p> Deja tu mensaje con gusto te atendemos.</p>
+                <br>
+                <p> Te invito a escribirnos a nuestro Whatsapp:(+506) 8701 1536.</p>
+                <br>
+            </div>            
+        </section>
+    </main>    
+
+    <footer>
+        <!-- Contenido del pie de página -->
+        <h3>Gracias por su confianza!</h3>
+        <p>Síguenos en nuestras redes sociales:</p>
+
+        <section id="redes-sociales">
+            <h2>Contactenos</h2>
+            <!-- Logotipo de Facebook -->
+            <a href="https://www.facebook.com/abigail.arguello.52">
+                <img src="facebook.jpeg" alt="Facebook">
+            </a>
+
+            <!-- Logotipo de Instagram -->
+            <a href="https://www.instagram.com/abigailarguello">
+                <img src="instagram.jpeg" alt="Instagram">
+            </a>
+            <!-- Logotipo de WhatsApp -->
+            <a href="https://wa.me/qr/7LKW7Z543H62F1">
+                <img src="whatsapp.jpeg" alt="WhatsApp">
+            </a>
+        </section>
+    </footer>
+
+    <script>
+        function mostrarChatbot() {
+            // Muestra o esconde el contenedor del chatbot al hacer clic en el botón
+            var chatContainer = document.getElementById('chat-container');
+            chatContainer.style.display = (chatContainer.style.display === 'none' || chatContainer.style.display === '') ? 'block' : 'none';
+            
+            console.log('Botón de chat presionado');
+        }
+    </script>
+</body>
+</html>
