@@ -1,3 +1,32 @@
+/* Estilos básicos para la página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal de las propiedades */
+#properties-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Estilo de cada propiedad */
+.property {
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.property img {
+    max-width: 100%;
+    height: auto;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -46,7 +75,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #0c0c0c;
+    background-color: #ffffff;
 }
 
 main {
@@ -57,20 +86,10 @@ main h2 {
     color: #3227ca;
 }
 
-.property {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-.property img {
-    max-width: 100%;
-    height: auto;
-}
-
 #redes-sociales img {
     max-width: 50px;
     height: auto;
+    border-radius: 25%;
 }
 
 footer {
@@ -80,15 +99,124 @@ footer {
     margin-top: 20px;
 }
 
+/* Estilos para el botón de ayuda */
+#help-button {
+    background-color: #a8b7ee; /* Color menta */
+    color: white; /* Texto en blanco para legibilidad */
+    font-size: 20px; /* Tamaño de letra */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar el ratón */
+    float: left; /* Colocar a la izquiera */
+}
 
-/* Estilos para el contenedor de chatbot simulado */
+
 #chat-container {
-    display: none;
-    border: 1px solid #e4ecb5;
-    padding: 10px;
-    max-width: 300px;
+    display: block;
+    border-radius: 30px;
+    border: 2px solid #e7e8ee;
+    padding: 30px;
+    width: 350px;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #9ee4de;
+    bottom: 30px;
+    right:30px;
+    background-color: #e0f4f2;
+    box-shadow: 0 2px 4px rgba(109, 109, 218, 0.1);
+}
+
+#chat-container::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #e9f1f1;
+    transform: rotate(45deg);
+    top: -10px;
+    right: -10px;
+    border-top: 1px solid #e4ecb5;
+    border-right: 1px solid #e4ecb5;
+    border-radius: 0 0 0 20px;
+}
+/* Estilos para el formulario */
+#reservation-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #f7d2e9;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: #45aaf2;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #3c8cb8;
+}
+
+/* Estilos para el mensaje de estado */
+#reservation-status {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f7d2e9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}/* Estilos para el título */
+.titulo {
+    text-align: center;
+}
+<form id="search-form">
+    <label for="location">Ubicación:</label>
+    <input type="text" id="location" name="location">
+
+    <label for="property-type">Tipo de Propiedad:</label>
+    <select id="property-type" name="property-type">
+        <option value="">Todos</option>
+        <option value="casa">Casa</option>
+        <option value="apartamento">Apartamento</option>
+        <option value="terreno">Terreno</option>
+    </select>
+
+    <label for="max-price">Precio Máximo:</label>
+    <input type="number" id="max-price" name="max-price">
+
+    <button type="submit">Buscar</button>
+</form>
+
+footer {
+    background-color: #f0f0f0; /* Color de fondo del footer */
+    padding: 20px; /* Espaciado interno del footer */
+    width: 100%; /* Anchura del footer al 100% del ancho de la página */
+}
+
+/* Ajustar estilos para las redes sociales */
+#redes-sociales {
+    display: flex; /* Mostrar los elementos en línea */
+    justify-content: center; /* Centrar los elementos horizontalmente */
+    gap: 20px; /* Espacio entre los elementos */
+}
+
+/* Estilos para las imágenes de las redes sociales */
+#redes-sociales img {
+    width: 50px; /* Tamaño de las imágenes */
 }

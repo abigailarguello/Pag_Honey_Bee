@@ -1,118 +1,328 @@
 <!DOCTYPE html>
 <html lang="es">
+
+<!-- Cabeza -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Honey-Bee - Bienes Raíces</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Honey-Bee - Bienes Raíces</title>
 </head>
+
+<!-- Cuerpo -->
 <body>
-    <!-- Este es el encabezado -->
+    <!-- Cabecera -->
     <header>
         <h1>Honey-Bee - Bienes Raíces</h1>
         <img src="honey_bee_logo.png" alt="Logo de Honey-Bee - Bienes Raíces">
 
-        <!-- Estes es el menú de navegación -->
+        <!-- Menú -->
         <nav>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#propiedades">Propiedades</a></li>
-                <li><a href="#ayuda">Ayuda</a></li>
                 <li><a href="#redes-sociales">Redes Sociales</a></li>
             </ul>
         </nav>
-    </header>    
-
-    <!-- Contenido de tu página -->
-    <main>
-        <section id="inicio">
-            <h2>Bienvenidos a Honey Bee, una página de bienes raíces y más.</h2>
-            <p>Te ayudamos a encontrar tu nuevo hogar y a vender tu antiguo hogar.</p>
-            <p>Somos una pagina de bienes raíces que te ayudara y accesorara de la 
-                mejor manera.</p>
-            <p>Vendemos tu casa , lote o te ayudamos a conseguir tu hogar soñado.</p>
-            <p>Somos su mejor acesoria.</p>
-            <p>Es un gusto tenerte con nosotros.</p>
-            <br>
-        </section>
-
-        <section id="propiedades">
-            <h2>Catálogo Tu Hogar - Bienes Raíces</h2>
-            <p>¡Tu hogar en nuestras manos!</p>
-            <br>
-
-            <div class="property">
-                <h2>Propiedad 1</h2>
-                <img src="casa_moderna.jpeg" alt="Casa Moderna">
-                <p>Descripción de la propiedad 1. La propiedad es una casa moderna.</p>
-                <p>Con finos acabados y una accelente ubicacion.</p>             
-                <p>Precio: $250,000.</p>
-                <p>Ubicación: Ciudad Ejemplo.</p>
-                <p>Características: 3 dormitorios, 2 baños</p>
-                <br>
-            </div>
+        <!-- Búsqueda de Propiedades -->
+        <h2>Búsqueda de Propiedades</h2>
+        <form id="search-form">
+            <label for="location">Ubicación:</label>
+            <input type="text" id="location" name="location">
         
-            <div class="property">
-                <h2>Propiedad 2</h2>
-                <img src="casa_cafe.jpeg" alt="Casa Café">
-                <p>Descripción de la propiedad 2. Esta propiedad tiene diseños en piedra 
-                    con una hermosa fachada en un barrio tranquilo y seguro.</p>
-                <p>Precio: $300,000</p>
-                <p>Ubicación: Otra Ciudad</p>
-                <p>Características: 4 dormitorios, 3 baños</p>
-                <br>
-            </div>
-        </section>
+            <label for="property-type">Tipo de Propiedad:</label>
+            <select id="property-type" name="property-type">
+                <option value="">Todos</option>
+                <option value="casa">Casa</option>
+                <option value="apartamento">Apartamento</option>
+                <option value="terreno">Terreno</option>
+            </select>
+        
+            <label for="max-price">Precio Máximo:</label>
+            <input type="number" id="max-price" name="max-price">
+        
+            <button type="submit">Buscar</button>
+        </form>
+        <!-- Contenedor para mostrar los resultados de la búsqueda -->
+<div id="search-results"></div>
+    </header>
 
-        <section id="ayuda">
-            <h2>Ayuda</h2>
-            <br>
-            <!-- Botón de Ayuda -->
-            <button onclick="mostrarChatbot()">Ayuda del ChatBot</button>
+    <!-- Lista de propiedades -->
+    <div id="properties-list"></div>
 
-            <!-- Contenedor de Chatbot simulado -->
-            <div id="chat-container">
-                <p>Chatbot: ¡Hola! ¿En qué puedo ayudarte hoy?</p>
-                <br>
-                <p> Deja tu mensaje con gusto te atendemos.</p>
-                <br>
-                <p> Te invito a escribirnos a nuestro Whatsapp:(+506) 8701 1536.</p>
-                <br>
-            </div>            
-        </section>
-    </main>    
+    <h2 class="titulo">Reservas de Visitas a Propiedades</h2>
+    <div id="reservation-status"></div>
+    <form id="reservation-form">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="phone">Teléfono:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+        <label for="date">Fecha de Visita:</label>
+        <input type="date" id="date" name="date" required><br><br>
+        <button type="submit">Reservar Visita</button>
 
-    <footer>
-        <!-- Contenido del pie de página -->
-        <h3>Gracias por su confianza!</h3>
-        <p>Síguenos en nuestras redes sociales:</p>
+    <script src="script.js"></script>
+  <!-- Botón de Ayuda -->
+<button id="help-button">Ayuda</button>
 
-        <section id="redes-sociales">
-            <h2>Contactenos</h2>
-            <!-- Logotipo de Facebook -->
-            <a href="https://www.facebook.com/abigail.arguello.52">
-                <img src="facebook.jpeg" alt="Facebook">
-            </a>
+<!-- Chatbot -->
+<div id="chat-container" style="display: none;">
+    <div id="chat-messages"></div>
+    <div id="user-input-container" class="hidden">
+        <input type="text" id="user-input" placeholder="Escribe aquí tu mensaje...">
+        <button id="send-button">Enviar</button>
+    </div>
+</div>
 
-            <!-- Logotipo de Instagram -->
-            <a href="https://www.instagram.com/abigailarguello">
-                <img src="instagram.jpeg" alt="Instagram">
-            </a>
-            <!-- Logotipo de WhatsApp -->
-            <a href="https://wa.me/qr/7LKW7Z543H62F1">
-                <img src="whatsapp.jpeg" alt="WhatsApp">
-            </a>
-        </section>
-    </footer>
-
-    <script>
-        function mostrarChatbot() {
-            // Muestra o esconde el contenedor del chatbot al hacer clic en el botón
-            var chatContainer = document.getElementById('chat-container');
-            chatContainer.style.display = (chatContainer.style.display === 'none' || chatContainer.style.display === '') ? 'block' : 'none';
-            
-            console.log('Botón de chat presionado');
+<!-- Pie de página -->
+<footer>
+    <h3>Gracias por su confianza!</h3>
+    <p>Síguenos en nuestras redes sociales:</p>
+    <section id="redes-sociales">
+        <h2>Contactenos</h2>
+        <a href="https://www.facebook.com/abigail.arguello.52">
+            <img src="facebook.jpeg" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/abigailarguello">
+            <img src="instagram.jpeg" alt="Instagram">
+        </a>
+        <a href="https://wa.me/qr/7LKW7Z543H62F1">
+            <img src="whatsapp.jpeg" alt="WhatsApp">
+        </a>
+    </section>
+</footer>
+  <!-- Script para buscar propiedades -->
+  <script>
+    const properties = [
+        {
+            id: 1,
+            location: "Ciudad New York",
+            type: "apartamento",
+            price: 200000,
+            bedrooms: 1,
+            bathrooms: 2,
+            imageUrl: "casa_moderna.jpeg",
+            description: "La propiedad es una casa moderna con una fachada preciosa y unos ventanales que impiden los rayos ultravioleta ademas que son polarizados para su privacidad."
+        },
+        {
+            id: 2,
+            location: "Ciudad Jaco Costa Rica",
+            type: "casa",
+            price: 150000,
+            bedrooms: 2,
+            bathrooms: 1,
+            imageUrl: "casa_cafe.jpeg",
+            description: "Esta propiedad tiene diseños en piedra con una hermosa fachada con direccion al hermoso mar , privacidad y hermosos atardeceres."
+        },
+        {
+            id: 3,
+            location: "Italia",
+            type: "casa",
+            price: 150000,
+            bedrooms: 2,
+            bathrooms: 1,
+            imageUrl: "villa sol.jpeg",
+            description: "Hermosa casa con acabados rusticos en las hermosas villas de Italia."
+        },
+        {
+            id: 4,
+            location: "Ciudad Cartago Costa Rica",
+            type: "casa",
+            price: 150000,
+            bedrooms: 2,
+            bathrooms: 1,
+            imageUrl: "casa rustica.jpeg",
+            description: "Esta propiedad tiene diseños con madera y piedra con una hermosa fachada en un barrio tranquilo y seguro."
+        },
+        {
+            id: 5,
+            location: "Londres",
+            type: "casa",
+            price: 150000,
+            bedrooms: 2,
+            bathrooms: 1,
+            imageUrl: "moderna.jpeg",
+            description: "Esta propiedad es moderna con ventanales que dan a una vista preciosa."
+        },
+        {
+            id: 6,
+            location: "Cecilia Italia",
+            type: "casa",
+            price: 150000,
+            bedrooms: 2,
+            bathrooms: 1,
+            imageUrl: "casa campestre.jpeg",
+            description: "Esta propiedad es rustica con estilo y elegancia."
+        },
+        {
+            id: 7,
+            location: "Costa Rica",
+            type: "casa",
+            price: 150000,
+            bedrooms: 2,
+            bathrooms: 1,
+            imageUrl: "paraiso.jpeg",
+            description: "Esta propiedad es moderna y hermosa con piscina y patio hermoso,es una casa inteligente."
         }
-    </script>
+    ];
+
+    const form = document.getElementById("reservation-form");
+    const propertiesList = document.getElementById("properties-list");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const location = document.getElementById("location").value.toLowerCase();
+        const propertyType = document.getElementById("property-type").value;
+        const maxPrice = parseFloat(document.getElementById("max-price").value);
+        const filteredProperties = properties.filter(property =>
+            (property.location.toLowerCase().includes(location) || location === "") &&
+            (propertyType === "" || property.type === propertyType) &&
+            (!maxPrice || property.price <= maxPrice)
+        );
+        displayProperties(filteredProperties);
+    });
+
+    function displayProperties(properties) {
+        propertiesList.innerHTML = "";
+        properties.forEach(property => {
+            const propertyElement = document.createElement("div");
+            propertyElement.classList.add("property");
+            propertyElement.innerHTML = `
+                <h2>Propiedad: ${property.id}</h2>
+                <p>Ubicación: ${property.location}</p>
+                <img src="${property.imageUrl}" alt="Propiedad ${property.id}">
+                <p>Descripción: ${property.description}</p>
+                <p>Precio: $${property.price}</p>
+                <p>Habitaciones: ${property.bedrooms}</p>
+                <p>Baños: ${property.bathrooms}</p>
+            `;
+            propertiesList.appendChild(propertyElement);
+        });
+    }
+
+    // Mostrar todas las propiedades al cargar la página
+    displayProperties(properties);
+</script>
+</body>
+</html>
+
+<!-- Script para buscar propiedades -->
+<script>
+    const properties = [
+        {
+            id: 1,
+            location: "Ciudad New York",
+            type: "apartamento",
+            price: 200000,
+            bedrooms: 1,
+            bathrooms: 2,
+            imageUrl: "casa_moderna.jpeg",
+            description: "La propiedad es una casa moderna con una fachada preciosa y unos ventanales que impiden los rayos ultravioleta ademas que son polarizados para su privacidad."
+        },
+        {
+            id: 2,
+            location: "Ciudad Jaco Costa Rica",
+            type: "casa",
+            price: 150000,
+            bedrooms: 2,
+            bathrooms: 1,
+            imageUrl: "casa_cafe.jpeg",
+            description: "Esta propiedad tiene diseños en piedra con una hermosa fachada con direccion al hermoso mar , privacidad y hermosos atardeceres."
+        },
+        {
+            id: 3,
+            location: "Italia",
+            type: "casa",
+            price: 150000,
+            bedrooms: 2,
+            bathrooms: 1,
+            imageUrl: "villa sol.jpeg",
+            description: "Hermosa casa con acabados rusticos en las hermosas villas de Italia."
+        },
+        {
+            id: 4,
+            location: "Ciudad Cartago Costa Rica",
+            type: "casa",
+            price: 150000,
+            bedrooms: 2,
+            bathrooms: 1,
+            imageUrl: "casa rustica.jpeg",
+            description: "Esta propiedad tiene diseños con madera y piedra con una hermosa fachada en un barrio tranquilo y seguro."
+        },
+        {
+            id: 5,
+            location: "Londres",
+            type: "casa",
+            price: 150000,
+            bedrooms: 2,
+            bathrooms: 1,
+            imageUrl: "moderna.jpeg",
+            description: "Esta propiedad es moderna con ventanales que dan a una vista preciosa."
+        },
+        {
+            id: 6,
+            location: "Cecilia Italia",
+            type: "casa",
+            price: 150000,
+            bedrooms: 2,
+            bathrooms: 1,
+            imageUrl: "casa campestre.jpeg",
+            description: "Esta propiedad es rustica con estilo y elegancia."
+        },
+        {
+            id: 7,
+            location: "Costa Rica",
+            type: "casa",
+            price: 150000,
+            bedrooms: 2,
+            bathrooms: 1,
+            imageUrl: "paraiso.jpeg",
+            description: "Esta propiedad es moderna y hermosa con piscina y patio hermoso,es una casa inteligente."
+        }
+    ];
+
+    const form = document.getElementById("search-form");
+    const propertiesList = document.getElementById("properties-list");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const location = document.getElementById("location").value.toLowerCase();
+        const propertyType = document.getElementById("property-type").value;
+        const maxPrice = parseFloat(document.getElementById("max-price").value);
+        const filteredProperties = properties.filter(property =>
+            (property.location.toLowerCase().includes(location) || location === "") &&
+            (propertyType === "" || property.type === propertyType) &&
+            (!maxPrice || property.price <= maxPrice)
+        );
+        displayProperties(filteredProperties);
+    });
+
+    function displayProperties(properties) {
+        propertiesList.innerHTML = "";
+        properties.forEach(property => {
+            const propertyElement = document.createElement("div");
+            propertyElement.classList.add("property");
+            propertyElement.innerHTML = `
+                <h2>Propiedad: ${property.id}</h2>
+                <p>Ubicación: ${property.location}</p>
+                <img src="${property.imageUrl}" alt="Propiedad ${property.id}">
+                <p>Descripción: ${property.description}</p>
+                <p>Precio: $${property.price}</p>
+                <p>Habitaciones: ${property.bedrooms}</p>
+                <p>Baños: ${property.bathrooms}</p>
+            `;
+            propertiesList.appendChild(propertyElement);
+        });
+    }
+
+    // Mostrar todas las propiedades al cargar la página
+    displayProperties(properties);
+</script>
+
+<!-- Script -->
+<script src="script.js"></script>
+
 </body>
 </html>
